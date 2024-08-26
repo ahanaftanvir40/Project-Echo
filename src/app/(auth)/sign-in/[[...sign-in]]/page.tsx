@@ -4,7 +4,7 @@ import { SignIn } from '@clerk/nextjs'
 function LoginPage() {
     return (
         <div>
-            <SignIn />
+            <SignIn fallbackRedirectUrl={'/main'} />
         </div>
     )
 }
