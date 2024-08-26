@@ -2,8 +2,9 @@ import React from 'react'
 
 function ServerIdPage() {
   return (
-    <div>
-      Server Id page
+    <div className=''>
+      <h1>server id</h1>
+     
     </div>
   )
 }
