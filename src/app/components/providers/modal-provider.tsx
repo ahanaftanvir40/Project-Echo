@@ -3,6 +3,7 @@
 import AddAServerModal from "../modals/AddAServerModal"
 import EditServerModal from "../modals/EditServerModal"
 import InviteModal from "../modals/InviteModal"
+import MembersModal from "../modals/MembersModal"
 
 export const ModalProvider = () => {
 
@@ -11,6 +12,7 @@ export const ModalProvider = () => {
             <AddAServerModal />
             <InviteModal />
             <EditServerModal />
+            <MembersModal />
         </>
     )
 }
