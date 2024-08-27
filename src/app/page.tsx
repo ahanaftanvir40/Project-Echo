@@ -4,14 +4,15 @@ import Image from "next/image";
 import { UserButton, useUser } from "@clerk/nextjs";
 import NavbarComponent from "./components/Navbar";
 import Hero from "./components/Hero";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 
 export default function Home() {
+  const router = useRouter()
   const {isSignedIn} = useUser()
 
   if(isSignedIn){
-    return redirect('/main')
+    return router.push('/main')
   }
 
   return (
