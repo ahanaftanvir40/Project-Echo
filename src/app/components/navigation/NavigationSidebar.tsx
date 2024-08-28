@@ -26,11 +26,11 @@ async function NavigationSidebar() {
             }
         }
     })
-    
-    
+
+
 
     return (
-        <div className='space-y-4 flex flex-col items-center h-full text-primary w-full dark:bg-[#1E1F22] py-3'>
+        <div className='space-y-4 flex flex-col items-center h-full text-primary w-full dark:bg-[#1E1F22] bg-[#E3E5E8] py-3'>
             <NavigationAction />
             <Separator
                 className='h-[2px] bg-zinc-300 dark:bg-zinc-700 rounded-md w-10 mx-auto'
@@ -45,7 +45,7 @@ async function NavigationSidebar() {
             <div className='pb-3 mt-auto flex items-center flex-col gap-y-4'>
                 <DarkModeToggle />
                 <UserButton appearance={{
-                    elements:{
+                    elements: {
                         userButtonAvatarBox: 'w-10 h-10'
                     }
                 }} />

@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 import axios from 'axios'
 import { useParams, useRouter } from 'next/navigation'
 import qs from 'query-string'
@@ -49,9 +49,10 @@ const formSchema = z.object({
 
 function CreateChannelModal() {
 
-    const { isOpen, onClose, type } = useModal()
+    const { isOpen, onClose, type, data } = useModal()
     const router = useRouter()
     const params = useParams()
+    const { channelType } = data
 
 
     const isModalOpen = isOpen && type === 'createChannel'
@@ -61,9 +62,18 @@ function CreateChannelModal() {
         resolver: zodResolver(formSchema),
         defaultValues: {
             name: '',
-            type: ChannelType.TEXT
+            type: channelType || ChannelType.TEXT
         }
     })
+
+
+    useEffect(() => {
+        if (channelType) {
+            form.setValue('type', channelType)
+        } else {
+            form.setValue('type', ChannelType.TEXT)
+        }
+    }, [channelType])
 
     const isLoading = form.formState.isSubmitting
 
