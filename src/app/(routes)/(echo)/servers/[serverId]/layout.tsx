@@ -41,7 +41,7 @@ async function ServerLayout({ children, params }: {
                 <ServerSidebar serverId = {params.serverId} />
             </div>
 
-            <main className='h-full md:pl-60'>
+            <main className='min-h-screen md:pl-60 '>
             {children}
             </main>
         </div>

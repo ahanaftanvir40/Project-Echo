@@ -34,7 +34,7 @@ async function ChannelIdPage({ params }: { params: { serverId: string, channelId
   }
 
   return (
-    <div className='bg-white dark:bg-[#313338] flex flex-col h-full'>
+    <div className='bg-white dark:bg-[#313338] flex flex-col min-h-screen'>
       <ChatHeader
         name={channel.name}
         serverId={channel.serverId}
@@ -43,7 +43,15 @@ async function ChannelIdPage({ params }: { params: { serverId: string, channelId
       <div className='flex-1'>
         future messages
       </div>
-      <ChatInput />
+      <ChatInput
+        name={channel.name}
+        type='channel'
+        apiUrl='/api/socket/messages'
+        query={{
+          channelId: channel.id,
+          serverId: channel.serverId
+        }}
+      />
     </div>
   )
 }
