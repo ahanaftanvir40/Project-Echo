@@ -29,7 +29,7 @@ function ServerChannel({ channel, server, role }: ServerChannelProps) {
     const Icon = iconMap[channel.type]
 
     const handleClick = () => {
-        router.push(`/servers/${params.serverId}/channels/${channel.id}`)
+        router.push(`/servers/${params?.serverId}/channels/${channel.id}`)
     }
 
     const onAction = (e: React.MouseEvent, action: ModalType) => {
